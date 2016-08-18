@@ -1,0 +1,74 @@
+.c-contact {
+  overflow: hidden;
+
+  @include breakpoint($break-desktop) {
+    width: 75%;
+    margin: 0 auto;
+  };
+}
+
+.c-contact__form {
+  @include span(6 of 12 last);
+}
+.c-contact__content {
+  @include span(6 of 12);
+}
+
+.c-contact-hero__weather {
+  padding: $base-spacing-unit;
+  color: $color-white;
+  font-size: 32px;
+  position: absolute;
+  right: $base-spacing-unit;
+  top: $base-spacing-unit;
+}
+
+.c-contact-hero__weather-icon {
+  float: left;
+}
+
+.c-contact-hero__temp {
+  float: left;
+}
+
+.c-contact-hero__time {
+  padding: $base-spacing-unit;
+  color: $color-white;
+  font-size: 32px;
+  position: absolute;
+  left: $base-spacing-unit;
+  top: $base-spacing-unit;
+}
+
+.c-contact-hero__title {
+  @include center;
+  color: $color-white;
+
+  h1 {
+    @include heroHeader;
+  }
+}
+
+// Hero image options
+.c-contact-hero__day-1 {
+  background-image: url(../../images/london-day-1.jpg);
+}
+
+.c-contact-hero__day-2{
+  background-image: url(../../images/london-day-2.jpg);
+}
+
+.c-contact-hero__night-1{
+  background-image: url(../../images/london-night-1.jpg);
+}
+
+.c-contact-hero__night-2{
+  background-image: url(../../images/london-night-2.jpg);
+}
+
+.c-contact-hero__day-Clouds{
+  background-image: url(../../images/london-clouds.jpg);
+}
+.c-contact-hero__day-Rain{
+  background-image: url(../../images/london-rain.jpg);
+}

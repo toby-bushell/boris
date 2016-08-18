@@ -1,0 +1,49 @@
+<div class="c-post-snippets">
+  <div class="o-layout-container">
+    <div id="twitter"></div>
+
+        <h3 class="c-post-snippets__header">{{cat_loop_header}}</h3>
+
+    <div class="c-post-snippets__wrapper">
+
+      {% for post in cat_loop %}
+        <div class="c-post-snippets__single">
+
+          <div class="c-post-snippets__content">
+            <h3><a href="{{post.link}}">{{post.title}}</a></h3>
+            <p>{{post.get_preview(20)}}</p>
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% if cat_loop_1 %}
+
+<div class="c-post-snippets">
+  <div class="o-layout-container">
+
+        <h3 class="c-post-snippets__header">{{cat_loop_1_header}}</h3>
+
+    <div class="c-post-snippets__wrapper">
+
+      {% for post in cat_loop_1 %}
+        <div class="c-post-snippets__single">
+
+          <div class="c-post-snippets__content">
+            <h3><a href="{{post.link}}">{{post.title}}</a></h3>
+            <p>{{post.get_preview(20)}}</p>
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+
+{% endif %}

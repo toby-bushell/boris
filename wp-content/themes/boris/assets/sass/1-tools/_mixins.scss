@@ -1,0 +1,104 @@
+/*==============================
+=            MIXINS            =
+==============================*/
+
+
+
+// Mixin to create a declaration whose value is a rem unit. Also provide pixel fallback.
+//
+// .simple-usage {
+//   @include rem(padding, 10px);
+// }
+
+@mixin rem($property, $value) {
+  #{$property}: $value;
+  #{$property}: rem($value);
+}
+
+
+
+// Mixin to drop micro clearfix into a selector.
+//
+// .simple-usage {
+//   @include clearfix();
+// }
+//
+// .detailed-usage {
+//   @include clearfix(important);
+// }
+
+@mixin clearfix($important: false) {
+
+  // Determine whether or not to make declarations important.
+  @if ($important == false) {
+    $important: null;
+  } @else {
+    $important: !important;
+  }
+
+  &:after {
+    content: "" $important;
+    display: table $important;
+    clear: both $important;
+  }
+}
+
+
+@mixin underline() {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    border-bottom: 2px solid $color-gold;
+    width: 0;
+    margin: 0 auto;
+    transition: width .4s ease-out;
+  }
+  @include hocus() {
+    &::after {
+      width: 200px;
+    }
+  };
+}
+@mixin smallUnderline() {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    border-bottom: 2px solid $color-gold;
+    width: 0;
+    margin: 0 auto;
+    transition: width .4s ease-out;
+    padding-top: $base-spacing-unit / 2;
+  }
+
+}
+
+// Generate `:hover` and `:focus` styles in one go.
+@mixin hocus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin center() {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+@mixin heroHeader() {
+  font-size: 48px;
+
+  @include breakpoint($break-tablet) {
+    font-size: 64px;
+  };
+}

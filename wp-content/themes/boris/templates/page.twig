@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% if post.home_hero_image %}
+	{% include 'partials/full-hero.twig' %}
+
+{% elseif post.contact_hero_image %}
+	{% include 'partials/contact-hero.twig' %}
+	
+
+{% endif %}
+
+
+
+{% endblock %}

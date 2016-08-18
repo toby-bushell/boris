@@ -1,0 +1,38 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="c-hero" style="background-image: url( {{TimberImage(post).src('hero') }} )">
+		<div class="o-overlay"></div>
+
+		<div class="o-layout-container">
+			<div class="c-featured__content">
+				<h1 class="c-featured__title">{{post.title}}</h1>
+			</div>
+		</div>
+	</div>
+
+		<article class="post-type-{{post.post_type}} c-article" id="post-{{post.ID}}">
+			<div class="o-layout-container">
+
+			<div class="c-article__wrapper">
+
+				<!-- <p class="c-article__author">
+					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+				</p> -->
+				<div class="c-article__summary">
+					{{post.content}}
+				</div>
+
+				<div class="c-article__feature">
+					{{post.get_field('portfolio_project_features')}}
+				</div>
+			</div>
+		</div>
+
+
+
+			</article>
+		</div>
+	</div><!-- /content-wrapper -->
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="c-content-wrapper">
+		<div class="o-layout-container">
+			<article class="post-type-{{post.post_type}} c-article" id="post-{{post.ID}}">
+
+			<div class="c-article__wrapper">
+				<h1 class="c-article__header">{{post.title}}</h1>
+				<p class="c-article__author">
+					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+				</p>
+				<div class="c-article__body">
+					{{post.content}}
+				</div>
+			</div>
+			{% include 'sidebar.twig' %}
+
+
+			{% if post.comment_status != 'closed' %}
+				<section class="o-comments">
+					<div class="o-respond">
+						<h3 class="h2">Comments</h3>
+						{{ fn('comment_form') }}
+					</div>
+					<div class="o-responses">
+						{% for cmt in post.get_comments() %}
+							{% include "comment.twig" with {comment:cmt} %}
+						{% endfor %}
+					</div>
+				</section>
+			{% endif %}
+			</article>
+		</div>
+	</div><!-- /content-wrapper -->
+{% endblock %}

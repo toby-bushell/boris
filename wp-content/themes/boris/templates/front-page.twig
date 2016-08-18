@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% if post.home_hero_image %}
+	{% include 'partials/full-hero.twig' %}
+{% endif %}
+
+<div class="c-summary">
+	<div class="o-layout-container">
+		{{post.get_field('home_intro_text')}}
+	</div>
+</div>
+
+
+{% include 'partials/featured-posts.twig' %}
+
+
+
+{% endblock %}

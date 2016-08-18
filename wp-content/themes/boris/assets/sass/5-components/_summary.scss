@@ -1,0 +1,38 @@
+.c-summary {
+  margin: $base-spacing-unit * 5 0;
+
+  h2 {
+    display: inline-block;
+    @include smallUnderline;
+    margin-bottom: $base-spacing-unit;
+    line-height: 1.2;
+
+    &::after{
+      width: 50%;
+      margin-left: 0;
+    }
+  }
+
+  @include breakpoint($break-tablet) {
+    max-width: 66%;
+    margin: $base-spacing-unit * 4;
+  };
+
+  @include breakpoint($break-desktop-med) {
+    max-width: 55%;
+  };
+
+  p {
+    line-height: 1.4;
+    font-size: $font-size-h3;
+    color: $color-black;
+
+    @include breakpoint($break-tablet) {
+      font-size: $font-size-h2;
+    };
+
+    @include breakpoint($break-desktop-med) {
+      font-size: 32px;
+    };
+  }
+}

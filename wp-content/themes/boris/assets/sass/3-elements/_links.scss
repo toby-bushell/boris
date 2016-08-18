@@ -1,0 +1,13 @@
+/*=============================
+=            LINKS            =
+=============================*/
+
+
+a {
+  color: $color-black;
+  @include font-weight(bold);
+  text-decoration: none;
+  @include hocus() {
+
+  }
+}

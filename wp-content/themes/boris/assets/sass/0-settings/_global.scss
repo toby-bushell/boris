@@ -1,0 +1,46 @@
+/*==============================
+=            GLOBAL            =
+==============================*/
+
+$susy: (
+  columns: 12,
+  gutters: .25,
+  math: fluid,
+  container: 1170px,
+  output: float,
+  global-box-sizing: border-box,
+  gutter-position: split
+);
+
+// Common media queries
+$break-mobile-land : 32em;        // 512px
+$break-tablet      : 40.063em;    // 641px
+$break-desktop     : 50em;        // 800px
+$break-desktop-mini: 55em;        // 880px
+$break-desktop-med : 64.063em;    // 1025px
+$break-desktop-wide: 75em;        // 1200px
+$break-desktop-xl  : 88em;        // 1408px
+$break-retina      : min-resolution 120dpi;
+
+// Base typographical styles and baseline grid.
+$base-font-size:    14px;
+$base-line-height:  20px;
+
+$font-heading   : 'Oswald', sans-serif;
+$font-body      : 'Roboto', sans-serif;
+
+$font-size-h1: 36px !default;
+$font-size-h2: 28px !default;
+$font-size-h3: 24px !default;
+$font-size-h4: 22px !default;
+$font-size-h5: 20px !default;
+$font-size-h6: 18px !default;
+
+// Standardise some UI treatments.
+$base-radius:       3px;
+
+$base-transition:   0.333333333s;
+
+$base-spacing-unit: $base-line-height;
+
+$header-height : 120px;

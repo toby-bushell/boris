@@ -1,0 +1,118 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$email-icon-blue-name: 'email-icon-blue';
+$email-icon-blue-x: 0px;
+$email-icon-blue-y: 0px;
+$email-icon-blue-offset-x: 0px;
+$email-icon-blue-offset-y: 0px;
+$email-icon-blue-width: 39px;
+$email-icon-blue-height: 38px;
+$email-icon-blue-total-width: 78px;
+$email-icon-blue-total-height: 76px;
+$email-icon-blue-image: '../images/sprite.png';
+$email-icon-blue: (0px, 0px, 0px, 0px, 39px, 38px, 78px, 76px, '../images/sprite.png', 'email-icon-blue', );
+$facebook-icon-blue-name: 'facebook-icon-blue';
+$facebook-icon-blue-x: 39px;
+$facebook-icon-blue-y: 0px;
+$facebook-icon-blue-offset-x: -39px;
+$facebook-icon-blue-offset-y: 0px;
+$facebook-icon-blue-width: 39px;
+$facebook-icon-blue-height: 38px;
+$facebook-icon-blue-total-width: 78px;
+$facebook-icon-blue-total-height: 76px;
+$facebook-icon-blue-image: '../images/sprite.png';
+$facebook-icon-blue: (39px, 0px, -39px, 0px, 39px, 38px, 78px, 76px, '../images/sprite.png', 'facebook-icon-blue', );
+$twitter-icon-blue-name: 'twitter-icon-blue';
+$twitter-icon-blue-x: 0px;
+$twitter-icon-blue-y: 38px;
+$twitter-icon-blue-offset-x: 0px;
+$twitter-icon-blue-offset-y: -38px;
+$twitter-icon-blue-width: 39px;
+$twitter-icon-blue-height: 38px;
+$twitter-icon-blue-total-width: 78px;
+$twitter-icon-blue-total-height: 76px;
+$twitter-icon-blue-image: '../images/sprite.png';
+$twitter-icon-blue: (0px, 38px, 0px, -38px, 39px, 38px, 78px, 76px, '../images/sprite.png', 'twitter-icon-blue', );
+$spritesheet-width: 78px;
+$spritesheet-height: 76px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($email-icon-blue, $facebook-icon-blue, $twitter-icon-blue, );
+$spritesheet: (78px, 76px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

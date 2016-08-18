@@ -1,0 +1,24 @@
+/*================================
+=            HEADLINE            =
+================================*/
+
+
+.o-headline {
+  @include rem(margin-bottom, $base-spacing-unit / 2);
+}
+
+.o-headline__main,
+.o-headline__sub {
+  @include rem(margin-bottom, 5px);
+  line-height: 1;
+}
+
+.o-section-header {
+  @include span(12 of 12);
+  float: none;
+  background: $color-grey;
+  padding: $base-spacing-unit / 2 $base-spacing-unit;
+  color: $color-white;
+  font-size: $font-size-h5;
+  font-weight: normal;
+}

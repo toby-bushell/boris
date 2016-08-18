@@ -1,0 +1,18 @@
+.o-comments {
+  float: left;
+  width: 100%;
+
+  label {
+    display: none;
+  }
+
+  input#submit {
+    @extend .c-btn;
+  }
+}
+
+.blog-comment {
+  padding: $base-spacing-unit ;
+  border-bottom: 1px solid $color-gold;
+  background: $color-light-grey;
+}

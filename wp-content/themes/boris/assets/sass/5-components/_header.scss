@@ -1,0 +1,28 @@
+.o-hamburger {
+  float: right;
+}
+
+.c-site-header {
+    // position: fixed;
+    height: 60px;
+    // width: 100%;
+    // background: white;
+    z-index: 1;
+}
+
+.mobile-menu-open {
+  .c-site-header {
+  }
+}
+
+.o-site-logo {
+  max-width: 150px;
+  float: left;
+}
+
+.mobile-menu-open {
+  .o-site-logo {
+    transition: opacity .4s ease-in;
+    opacity: 0;
+  }
+}

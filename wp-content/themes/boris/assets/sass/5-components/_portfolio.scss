@@ -1,0 +1,16 @@
+.c-portfolio__heading {
+  text-align: center;
+  text-transform: none;
+  margin: ($base-spacing-unit * 4) auto ($base-spacing-unit * 5) auto;
+
+  @include breakpoint($break-tablet) {
+    max-width: 500px;
+    @include font-size(42px);
+  };
+}
+
+.c-portfolio {
+  .c-featured__single {
+    margin-bottom: $base-spacing-unit * 2;
+  }
+}

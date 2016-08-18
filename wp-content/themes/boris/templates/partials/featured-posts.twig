@@ -1,0 +1,32 @@
+<div class="c-featured">
+
+
+{% for work in featured %}
+
+	<div class="c-featured__single" style="background-image: url({{TimberImage(work).src('hero')}})">
+		<div class="o-layout-container">
+
+			<div class="c-featured__box">
+				<a class="c-featured__link" href="{{work.link}}">
+
+					<div class="c-featured__content">
+							<p class="c-feauted__type">{{work.portfolio_project_type}}</p>
+							<h3 class="c-featured__title">{{work.post_title}}</h3>
+						<!-- <div class="c-featured__info">
+							<p>{{work.post_excerpt}}</p>
+						</div> -->
+					</div>
+				</a>
+			</div>
+
+			<div class="c-featured__mobile">
+				<p class="c-feauted__type">{{work.portfolio_project_type}}</p>
+				<h3 class="c-featured__title">{{work.post_title}}</h3>
+			</div>
+
+		</div>
+	</div>
+
+{% endfor %}
+
+</div>

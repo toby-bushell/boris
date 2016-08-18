@@ -1,0 +1,81 @@
+.c-home-hero__title-wrapper {
+  position: absolute;
+  top: 15%;
+  width: 75%;
+  // background-image: radial-gradient(60% 40% at center center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), transparent);
+}
+
+.c-home-hero__title {
+  color: $color-white;
+  padding: 15% 0 0 0;
+  h1 {
+    line-height: 1.5;
+  }
+}
+
+.c-home-hero__subtitle {
+  color: $color-white;
+  opacity: 0;
+  transform: scale(.9);
+  transition: all 1s .2s ease-out;
+  position: relative;
+  top: 20px;
+}
+
+.c-home-hero__arrow {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+
+  &::before {
+    font-size: 20px;
+    color: $color-white;
+  }
+}
+// Typing finished
+.typed {
+  .c-home-hero__subtitle {
+    transform: scale(1);
+    opacity: 1;
+    top: 0;
+  }
+
+  .c-home-hero__arrow {
+    animation: 2s ease-out 1.4s infinite arrow_blink;
+  }
+}
+
+@keyframes arrow_blink {
+  0% { opacity:.5; }
+  50% { opacity:1; }
+  100% { opacity:.5; }
+}
+
+// Contact page
+
+.c-contact-hero {
+  .o-layout-container {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+}
+
+.c-hero {
+  position: relative;
+  background-size: cover;
+  height: 60vh;
+  min-height: 400px;
+  background-position: center;
+
+  .c-featured__title {
+    font-size: 48px;
+    @include smallUnderline;
+
+    &::after {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/*================================
+=            WRAPPERS            =
+================================*/
+
+
+.o-site-container {
+  // Sticky Footer
+  // display: flex;
+  // flex-direction: column;
+  // min-height: 100%;
+  // transition: .4s ease-out;
+  flex: 1;
+}
+
+.o-site-content {
+  // flex: 1 0 auto;
+  width: 100%;
+}
+
+// Susy grid container
+.o-layout-container{
+  padding: 0 $base-spacing-unit;
+  max-width: 1200px;
+  margin: 0 auto;
+}

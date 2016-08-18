@@ -1,0 +1,41 @@
+.c-article {
+
+}
+
+.c-article__wrapper {
+  @include breakpoint($break-tablet) {
+  };
+}
+
+.c-article__summary {
+  @include span(6 of 12);
+  padding-top: $base-spacing-unit * 2;
+}
+
+.c-article__feature {
+  position: relative;
+  @include span(5 of 12 last);
+
+  background: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+        ),
+  url(../../images/fabric.png);
+
+  padding: $base-spacing-unit * 4;
+  bottom: $base-spacing-unit * 3;
+  float: right;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  li {
+    color: $color-white;
+  }
+
+  strong {
+    font-size: 18px;
+    color: $color-gold;
+  }
+}

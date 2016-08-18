@@ -1,0 +1,61 @@
+/*================================
+=            HEADINGS            =
+================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: normal;
+}
+
+h1 {
+  @include font-size(32px);
+  text-transform: uppercase;
+  box-decoration-break: clone;
+
+  @include breakpoint($break-mobile-land) {
+    @include font-size($font-size-h2);
+  }
+
+  @include breakpoint($break-tablet) {
+      @include font-size($font-size-h1);
+  }
+}
+
+h2 {
+  @include font-size($font-size-h4, 1.1);
+  margin-bottom: .9em;
+
+  @include breakpoint($break-tablet) {
+      @include font-size ($font-size-h2, 1.1);
+  }
+}
+
+h3 {
+  @include font-size(20px);
+
+  @include breakpoint($break-tablet) {
+      @include font-size ($font-size-h3);
+  }
+}
+
+h4 {
+  @include font-size($base-font-size);
+  text-transform: uppercase;
+  box-decoration-break: clone;
+  @include breakpoint($break-tablet) {
+      @include font-size ($font-size-h6);
+  }
+}
+
+h5 {
+  @include font-size($font-size-h5);
+}
+
+h6 {
+  @include font-size($font-size-h6);
+}

@@ -1,0 +1,47 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<nav class="c-nav-primary" role="navigation">
+			{% include "menu.twig" with {'menu': menu.get_items} %}
+		</nav>
+
+			<header class="c-site-header">
+
+				<div class="o-layout-container">
+					{% block header %}
+							<div class="o-site-logo" role="banner">
+								<a href="{{site.url}}" rel="home"><img src="{{theme.link}}/images/boris-logo.png"></a>
+							</div>
+
+							<button class="o-hamburger" type="button">
+							 	 <span class="o-hamburger-box">
+									 <span class="o-hamburger-inner"></span>
+								 </span>
+							</button>
+
+					{% endblock %}
+				</div>
+
+			</header>
+
+			<section class="o-site-container" role="main">
+
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+
+			</section>
+
+			{% block footer %}
+					{% include 'footer.twig' %}
+				{{ function('wp_footer') }}
+			{% endblock %}
+		</div>
+	</body>
+</html>

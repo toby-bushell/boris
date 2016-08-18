@@ -1,0 +1,9 @@
+button, input, select, textarea {
+  border: 1px solid $color-grey;
+}
+
+.wpcf7 {
+  input[type="submit"] {
+    @extend .c-btn;
+  }
+}

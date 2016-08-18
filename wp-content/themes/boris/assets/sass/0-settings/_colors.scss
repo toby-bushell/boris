@@ -1,0 +1,35 @@
+/*===============================
+=            COLOURS            =
+===============================*/
+
+
+// Set up a colour palette which allows us to theme the entire project from one
+// location.
+
+
+$color-red:                                   #AF473C;
+$color-black:                                 #1b1b1b;
+$color-off-black:                             #3F3E3E;
+$color-gold:                                  #ECD562;
+
+
+$color-grey:                                  #737373;
+$color-light-grey:                            #737373;
+
+
+$color-white:                                 #fff;
+
+// Reassign literal variables to meaningful ones.
+
+$color-page-background:                       #FFFFFF;
+
+$color-page-text:                             $color-black;
+
+
+$color-cta-action:                            $color-black;
+
+$color-download-button:                       $color-black;
+
+
+$color-page-footer:                           #FFFFFF;
+$color-page-footer-background:                $color-black;
