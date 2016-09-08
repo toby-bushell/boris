@@ -2,15 +2,26 @@
   text-align: center;
   text-transform: none;
   margin: ($base-spacing-unit * 4) auto ($base-spacing-unit * 5) auto;
+  padding: 0 5%;
 
   @include breakpoint($break-tablet) {
-    max-width: 500px;
+    max-width: 600px;
     @include font-size(42px);
   };
 }
 
 .c-portfolio {
   .c-featured__single {
-    margin-bottom: $base-spacing-unit * 2;
+    height: auto;
+    float: left;
+
+    @include breakpoint($break-tablet) {
+      width: 50%;
+
+    };
+
+    @include breakpoint($break-desktop-med) {
+      width: 33.33333%;
+    };
   }
 }

@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+
+{% if post.contact_hero_image %}
+	{% include 'partials/contact-hero.twig' %}
+{% endif %}
+
+{% if post.contact_content %}
+	{% include 'partials/contact-content.twig' %}
+{% endif %}
+
+
+
+{% endblock %}

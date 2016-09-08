@@ -1,0 +1,45 @@
+.c-contact-content {
+  padding: $base-spacing-unit * 2 0;
+  text-align: center;
+
+  @include breakpoint($break-tablet) {
+    padding: $base-spacing-unit * 4 0;
+    width: 75%;
+    margin: 0 auto;
+  };
+
+  p {
+    font-size: $font-size-h4;
+
+    @include breakpoint($break-tablet) {
+      font-size: $font-size-h3;
+    };
+  }
+  strong {
+    font-size: $font-size-h1;
+    color: $color-black;
+  }
+}
+
+.c-contact__email {
+  margin-top: $base-spacing-unit * 2;
+  color: $color-black;
+
+  @include breakpoint($break-tablet) {
+    margin-top: $base-spacing-unit * 4;
+  };
+}
+
+.c-contact__social {
+  color: $color-black;
+
+  .c-contact__social-icon {
+    display: inline-block;
+    font-size: 30px;
+    margin: $base-spacing-unit / 2;
+
+    @include hocus() {
+      color: $color-gold;
+    };
+  }
+}

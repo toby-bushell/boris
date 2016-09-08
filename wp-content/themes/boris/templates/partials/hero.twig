@@ -1,0 +1,48 @@
+<div class="c-hero" style="background-image: url({{TimberImage(post.get_field('hero_image') ).src('hero')  }})">
+
+		<div class="o-overlay"></div>
+
+			<div class="c-hero__title">
+				{{post.get_field('hero_title')}}
+			</div>
+
+</div>
+
+<div class="c-split">
+	<div class="o-layout-container">
+
+		<div class="c-split__content">
+			{{post.get_field('left_content')}}
+		</div>
+		<div class="c-split__image">
+			<img src="{{TimberImage(post.get_field('right_image')).src('large')}}" alt="{{TimberImage(post.get_field('right_image')).alt }}"/>
+		</div>
+
+	</div>
+</div>
+
+<div class="o-block-content">
+	<div class="o-layout-container">
+		{{post.get_field('about_us_content')}}
+	</div>
+</div>
+
+<div class="c-split">
+	<div class="o-layout-container">
+
+		<div class="c-split__content">
+			{{post.get_field('left_content_1')}}
+		</div>
+		<div class="c-split__image">
+			<img src="{{TimberImage(post.get_field('right_image_1')).src('large')}}" alt="{{TimberImage(post.get_field('right_image_1')).alt }}"/>
+		</div>
+
+	</div>
+</div>
+
+<div class="c-gallery">
+	{% for image in post.get_field('about_gallery') %}
+
+		<img src="{{TimberImage(image).src('medium')}}" alt="{{TimberImage(image).alt}}" />
+	{% endfor %}
+</div>

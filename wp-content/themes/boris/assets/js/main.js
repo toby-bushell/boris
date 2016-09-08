@@ -175,6 +175,49 @@ boris.menuHover = {
 
 
 /*
+** Move the feature box slightly on scroll
+*/
+
+boris.featuesHover = {
+  lastscroll : 0,
+  divPosition: 0,
+  divHeight : 0,
+  windowHeight: 0,
+
+  init: function() {
+    this.divPosition = $('.c-article__feature').offset().top;
+    this.divHeight = $('.c-article__feature').height();
+    this.windowHeight = $(window).height();
+    // console.log('position',this.divPosition);
+    this.getScroll();
+  },
+
+  getScroll : function() {
+    var scrolled = $(document).scrollTop();
+    if(scrolled > this.lastscroll){
+      this.triggerMove(scrolled, "down");
+    }else {
+      this.triggerMove(scrolled, "up");
+    }
+    this.lastscroll = scrolled;
+    var movement = scrolled / 10;
+    // console.log(movement);
+  },
+
+  triggerMove : function(scrolled, direction) {
+    // 0 is when the div is in the center of the screen
+    var mover = (this.windowHeight / 2 - (this.divPosition - scrolled + (this.divHeight / 2)) ) / 10 ;
+    this.animateDiv(mover);
+  },
+
+  animateDiv : function(mover) {
+    console.log(mover);
+    $('.c-article__feature').css('transform', 'translate3d(0px,'+ mover + 'px, 0px)');
+    console.log('transform', 'translate3d(0,'+ mover + 'px, 0 )');
+  }
+};
+
+/*
 ** Various triggers
 */
 
@@ -196,12 +239,12 @@ $(window).resize(function(){
   if( $(window).width() !== window_width ) {
     resizeBackground();
     console.log("boris");
-  };
+  }
+
   window_width = $(window).width();
 
   boris.hideMenu.init();
   // resizeBackground();
-
 });
 
 $(".c-nav-primary__link").on("mouseenter", function () {
@@ -216,7 +259,12 @@ $(".c-nav-primary__menu").on("mouseleave", function () {
   boris.menuHover.menuLeave();
 });
 
-
 function resizeBackground() {
   $('.o-hero-fullscreen').height($(window).height()-60);
+}
+
+if($('body').hasClass('single-work')) {
+  $(window).scroll(function(){
+    boris.featuesHover.init();
+  });
 }

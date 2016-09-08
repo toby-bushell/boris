@@ -13,49 +13,34 @@ h6 {
 }
 
 h1 {
-  @include font-size(32px);
+  font-size: 1.947em;
   text-transform: uppercase;
   box-decoration-break: clone;
 
   @include breakpoint($break-mobile-land) {
-    @include font-size($font-size-h2);
-  }
+    font-size: 2.847em;
+  };
 
   @include breakpoint($break-tablet) {
-      @include font-size($font-size-h1);
-  }
+    font-size: 3.247em;
+  };
+
+}h2 {
+  font-size: 1.874em;
 }
 
-h2 {
-  @include font-size($font-size-h4, 1.1);
-  margin-bottom: .9em;
-
-  @include breakpoint($break-tablet) {
-      @include font-size ($font-size-h2, 1.1);
-  }
-}
 
 h3 {
-  @include font-size(20px);
-
-  @include breakpoint($break-tablet) {
-      @include font-size ($font-size-h3);
-  }
+  font-size:1.229em;
 }
 
 h4 {
-  @include font-size($base-font-size);
-  text-transform: uppercase;
-  box-decoration-break: clone;
-  @include breakpoint($break-tablet) {
-      @include font-size ($font-size-h6);
-  }
+  font-size:1.1em;
 }
 
 h5 {
-  @include font-size($font-size-h5);
+  font-size: 1em;
 }
 
 h6 {
-  @include font-size($font-size-h6);
 }

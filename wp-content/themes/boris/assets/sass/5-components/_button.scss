@@ -1,7 +1,37 @@
 .c-btn {
-  border: none;
+  border: 7px solid $color-black;
   outline: none;
-  background: $color-grey;
   color: $color-white;
   padding: 1em 2em;
+  color: $color-black;
+  position: relative;
+  display: inline-block;
+  background: $color-white;
+  transition: all .2s ease-out;
+
+  &::after {
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0px;
+    background: black;
+    z-index: -1;
+  }
+
+  @include hocus() {
+    top: 7px;
+    left: 7px;
+
+    &::after {
+      left: -7px;
+      top: -7px;
+    }
+  };
+}
+
+.c-btn__wrapper {
+  margin: 60px 0;
+  text-align: center;
 }

@@ -1,6 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
+	{% if post.get_field('portfolio_brand') %}
+		{% set color = post.get_field('portfolio_brand') %}
+		{% set style = "style=background-color:" ~  color  %}
+	{% endif %}
 
 	<div class="c-hero" style="background-image: url( {{TimberImage(post).src('hero') }} )">
 		<div class="o-overlay"></div>
@@ -17,6 +21,10 @@
 
 			<div class="c-article__wrapper">
 
+				<div class="c-article__feature">
+					{{post.get_field('portfolio_project_features')}}
+				</div>
+
 				<!-- <p class="c-article__author">
 					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
 				</p> -->
@@ -24,13 +32,20 @@
 					{{post.content}}
 				</div>
 
-				<div class="c-article__feature">
-					{{post.get_field('portfolio_project_features')}}
-				</div>
 			</div>
 		</div>
 
+		<div class="c-article__image">
+			<div class="o-layout-container">
+				{% for image in post.get_field('portfolio_images') %}
+					<img src="{{TimberImage(image).src('hero')}}" alt="{{TimberImage(image).alt}}">
+				{% endfor %}
+			</div>
+		</div>
 
+		<div class="c-btn__wrapper">
+			<a class="c-btn" href="{{post.get_field('portfolio_web_address')}}">View Site</a>
+		</div>
 
 			</article>
 		</div>

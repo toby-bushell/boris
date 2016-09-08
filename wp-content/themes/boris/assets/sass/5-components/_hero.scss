@@ -1,13 +1,17 @@
 .c-home-hero__title-wrapper {
   position: absolute;
-  top: 15%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 75%;
+
+  @include breakpoint($break-tablet) {
+    // left: 100px;
+  };
   // background-image: radial-gradient(60% 40% at center center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), transparent);
 }
 
 .c-home-hero__title {
   color: $color-white;
-  padding: 15% 0 0 0;
   h1 {
     line-height: 1.5;
   }
@@ -20,6 +24,10 @@
   transition: all 1s .2s ease-out;
   position: relative;
   top: 20px;
+
+  @include breakpoint($break-tablet) {
+    font-size: 1.5em;
+  };
 }
 
 .c-home-hero__arrow {
@@ -61,21 +69,43 @@
     position: relative;
     height: 100%;
   }
+  .c-home-hero__arrow {
+    opacity: 1;
+  }
 }
 
 .c-hero {
   position: relative;
   background-size: cover;
-  height: 60vh;
+  height: 90vh;
   min-height: 400px;
   background-position: center;
+  display: flex;
 
   .c-featured__title {
-    font-size: 48px;
     @include smallUnderline;
 
     &::after {
       width: 50%;
     }
+  }
+}
+
+.c-hero__title {
+  position: absolute;
+  left: $base-spacing-unit * 2;
+  max-width: 42em;
+  color: $color-white;
+  font-size: .8em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  h1 {
+    text-transform: none;
+  }
+  i {
+    color: $color-gold;
+    font-style: normal;
   }
 }

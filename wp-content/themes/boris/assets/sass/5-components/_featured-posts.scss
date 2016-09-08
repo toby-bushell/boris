@@ -15,12 +15,16 @@
   position: relative;
 
   @include breakpoint($break-desktop) {
-    height: 60vh;
+    height: 70vh;
     &:hover {
      .c-featured__box {
        display: block;
        opacity: 1;
        visibility: visible;
+     }
+     .c-feauted__type {
+       opacity: 1;
+       transform: scale(1);
      }
      .c-featured__title {
        &::after {
@@ -42,7 +46,14 @@
   @include smallUnderline;
   text-transform: uppercase;
   margin-bottom: $base-spacing-unit;
-  font-size: $font-size-h2;
+
+  @include breakpoint($break-desktop) {
+    font-size: 1.5em;
+  };
+
+  @include breakpoint($break-desktop-xl) {
+    font-size: 2em;
+  };
 
   &::after {
     transition: width .4s ease-out;
@@ -51,6 +62,12 @@
 
 .c-feauted__type {
   color: $color-gold;
+  transition: all .4s .2s ease-out;
+
+  @include breakpoint($break-tablet) {
+    transform: scale(.9);
+    opacity: 0;
+  };
 }
 
 .c-featured__box {

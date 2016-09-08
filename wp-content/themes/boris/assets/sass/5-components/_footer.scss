@@ -1,0 +1,11 @@
+.c-footer {
+  text-align: center;
+  margin-top: $base-spacing-unit;
+  padding: $base-spacing-unit 0;
+  color: $color-light-grey;
+  font-size: .8em;
+
+  @include breakpoint($break-desktop) {
+    font-size: 1em;
+  };
+}

@@ -16,3 +16,19 @@ ul, ol,
 dd {
   margin-left: $base-spacing-unit;
 }
+
+html {
+  font-size: 16px;
+
+  @include breakpoint($break-desktop) {
+    font-size: 18px;
+  };
+
+  @include breakpoint($break-desktop-xl) {
+    font-size: 20px;
+  };
+}
+
+p {
+  font-size: 1em;
+}

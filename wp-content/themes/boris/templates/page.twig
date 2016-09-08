@@ -2,14 +2,56 @@
 
 {% block content %}
 
-{% if post.home_hero_image %}
-	{% include 'partials/full-hero.twig' %}
+<div class="c-hero" style="background-image: url({{TimberImage(post.get_field('hero_image') ).src('hero')  }})">
+	<div class="o-layout-container">
 
-{% elseif post.contact_hero_image %}
-	{% include 'partials/contact-hero.twig' %}
-	
+			<div class="o-overlay"></div>
 
-{% endif %}
+			<div class="c-hero__title">
+				<h1>{{post.get_field('hero_title')}}</h1>
+			</div>
+
+	</div>
+</div>
+
+<div class="o-layout-container">
+	<div class="c-split">
+
+		<div class="c-split__content">
+			{{post.get_field('left_content')}}
+		</div>
+		<div class="c-split__image" style="background-image:url({{TimberImage(post.get_field('right_image')).src('large')}})"></div>
+
+	</div>
+</div>
+
+<div class="o-block-content">
+	<div class="o-layout-container">
+		<p>{{post.get_field('about_us_content')}}</p>
+	</div>
+</div>
+
+<!-- <div class="o-layout-container">
+
+	<div class="c-split">
+
+		<div class="c-split__content">
+			{{post.get_field('left_content_1')}}
+			{% include 'partials/social.twig' %}
+		</div>
+
+		<div class="c-split__image" style="background-image:url({{TimberImage(post.get_field('right_image_1')).src('large')}})"></div>
+
+	</div>
+</div> -->
+
+	<div class="c-portfolio">
+			{% for image in post.get_field('about_gallery') %}
+				<div class="c-featured__single">
+					<img  src="{{TimberImage(image).src('portfolio')}}" alt="{{TimberImage(image).alt}}" />
+				</div>
+			{% endfor %}
+	</div>
 
 
 

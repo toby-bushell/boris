@@ -1,5 +1,6 @@
 .c-summary {
   margin: $base-spacing-unit * 5 0;
+  font-size: 1.5em;
 
   h2 {
     display: inline-block;
@@ -22,17 +23,13 @@
     max-width: 55%;
   };
 
+  @include breakpoint($break-desktop-xl) {
+    margin: $base-spacing-unit * 6 0;
+  };
+
+
   p {
-    line-height: 1.4;
-    font-size: $font-size-h3;
+    line-height: 1.8;
     color: $color-black;
-
-    @include breakpoint($break-tablet) {
-      font-size: $font-size-h2;
-    };
-
-    @include breakpoint($break-desktop-med) {
-      font-size: 32px;
-    };
   }
 }

@@ -1,0 +1,26 @@
+.c-split {
+  display: flex;
+  line-height: 1.8em;
+}
+
+.c-split__image {
+  margin-left: auto;
+  background-size: cover;
+  background-position: center;
+
+  @include breakpoint($break-desktop) {
+    width: 50%;
+    float: right;
+    display: block;
+  };
+}
+
+.c-split__content {
+  max-width: 32em;
+  padding: $base-spacing-unit * 3 $base-spacing-unit * 3 $base-spacing-unit * 3 $base-spacing-unit * 2;
+
+  @include breakpoint($break-desktop) {
+    width: 50%;
+    float: left;
+  };
+}

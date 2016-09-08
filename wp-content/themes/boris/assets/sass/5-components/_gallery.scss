@@ -1,0 +1,20 @@
+.c-gallery {
+
+}
+
+.c-gallery__image {
+  width: 100%;
+  float: left;
+
+  &:first-of-type {
+    width: 50%;
+  }
+
+  @include breakpoint($break-tablet) {
+    width: 50%;
+  };
+
+  @include breakpoint($break-desktop-med) {
+    width: 25%;
+  };
+}

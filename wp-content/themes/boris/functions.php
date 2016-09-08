@@ -20,6 +20,7 @@ class StarterSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_image_size( 'hero', 1500 );
+		add_image_size( 'portfolio', 800, 600, true ); 
 		parent::__construct();
 	}
 
