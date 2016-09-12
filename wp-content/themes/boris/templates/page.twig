@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<div class="c-hero" style="background-image: url({{TimberImage(post.get_field('hero_image') ).src('hero')  }})">
-	<div class="o-layout-container">
+<div class="o-hero-fullscreen c-hero" style="background-image: url({{TimberImage(post.get_field('hero_image') ).src('hero')  }})">
+	<div class="o-overlay"></div>
 
-			<div class="o-overlay"></div>
+	<div class="o-layout-container">
 
 			<div class="c-hero__title">
 				<h1>{{post.get_field('hero_title')}}</h1>

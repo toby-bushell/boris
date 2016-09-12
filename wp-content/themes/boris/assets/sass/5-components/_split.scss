@@ -17,9 +17,10 @@
 
 .c-split__content {
   max-width: 32em;
-  padding: $base-spacing-unit * 3 $base-spacing-unit * 3 $base-spacing-unit * 3 $base-spacing-unit * 2;
+  padding: $base-spacing-unit * 3 $base-spacing-unit * 3 $base-spacing-unit * 3 0;
 
   @include breakpoint($break-desktop) {
+    padding-left: $base-spacing-unit * 2;
     width: 50%;
     float: left;
   };

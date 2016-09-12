@@ -1,23 +1,22 @@
 .c-contact-content {
   padding: $base-spacing-unit * 2 0;
   text-align: center;
+  font-size: 1.1em;
 
   @include breakpoint($break-tablet) {
     padding: $base-spacing-unit * 4 0;
     width: 75%;
     margin: 0 auto;
+    font-size: 1.4em;
   };
 
-  p {
-    font-size: $font-size-h4;
+  strong {
+    font-size: 1.4em;
+    color: $color-black;
 
     @include breakpoint($break-tablet) {
-      font-size: $font-size-h3;
-    };
-  }
-  strong {
-    font-size: $font-size-h1;
-    color: $color-black;
+      font-size: 1.8em;
+    }
   }
 }
 

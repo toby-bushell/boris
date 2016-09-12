@@ -15,12 +15,16 @@
 }
 
 .c-contact-hero__weather {
-  padding: $base-spacing-unit;
+  padding: $base-spacing-unit 0;
   color: $color-white;
-  font-size: 32px;
+  font-size: 24px;
   position: absolute;
   right: $base-spacing-unit;
   top: $base-spacing-unit;
+
+  @include breakpoint($break-tablet) {
+    padding: $base-spacing-unit;
+  };
 }
 
 .c-contact-hero__weather-icon {
@@ -32,12 +36,16 @@
 }
 
 .c-contact-hero__time {
-  padding: $base-spacing-unit;
+  padding: $base-spacing-unit 0;
   color: $color-white;
-  font-size: 32px;
+  font-size: 24px;
   position: absolute;
   left: $base-spacing-unit;
   top: $base-spacing-unit;
+
+  @include breakpoint($break-tablet) {
+    padding: $base-spacing-unit;
+  };
 }
 
 .c-contact-hero__title {

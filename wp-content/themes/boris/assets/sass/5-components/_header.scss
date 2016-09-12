@@ -4,7 +4,7 @@
 
 .c-site-header {
     // position: fixed;
-    height: 70px;
+    height: 75px;
     // width: 100%;
     // background: white;
     z-index: 1;
@@ -16,8 +16,13 @@
 }
 
 .o-site-logo {
-  max-width: 150px;
+  line-height: 75px;
   float: left;
+  max-width: 125px;
+
+  @include breakpoint($break-tablet) {
+    max-width: 150px;
+  };
 }
 
 .mobile-menu-open {

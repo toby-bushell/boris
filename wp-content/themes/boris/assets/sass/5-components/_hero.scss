@@ -7,7 +7,6 @@
   @include breakpoint($break-tablet) {
     // left: 100px;
   };
-  // background-image: radial-gradient(60% 40% at center center, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), transparent);
 }
 
 .c-home-hero__title {
@@ -89,11 +88,14 @@
       width: 50%;
     }
   }
+
+  .o-layout-container {
+    position: relative;
+  }
 }
 
 .c-hero__title {
   position: absolute;
-  left: $base-spacing-unit * 2;
   max-width: 42em;
   color: $color-white;
   font-size: .8em;

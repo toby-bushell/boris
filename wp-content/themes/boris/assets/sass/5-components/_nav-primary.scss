@@ -41,6 +41,8 @@
 }
 
 .mobile-menu-open {
+  overflow: hidden;
+
   .c-nav-primary {
     opacity: 1;
     width: 100%;
