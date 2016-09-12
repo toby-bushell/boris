@@ -48,7 +48,7 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./assets/css'))
     .pipe(filter('**/*.css')) // Filtering stream to only css files
     .pipe(browserSync.reload({stream:true}));
-})
+});
 
 
 gulp.task('sizereport', function () {

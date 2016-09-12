@@ -20,7 +20,7 @@ class StarterSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_image_size( 'hero', 1500 );
-		add_image_size( 'portfolio', 800, 600, true ); 
+		add_image_size( 'portfolio', 800, 600, true );
 		parent::__construct();
 	}
 
@@ -61,6 +61,11 @@ new StarterSite();
 
 // Enqueue scripts
 function my_scripts() {
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('wp_print_styles', 'print_emoji_styles');
+
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 	// Use jQuery from a CDN
 	wp_deregister_script('jquery');
@@ -69,10 +74,9 @@ function my_scripts() {
 	// Enqueue our stylesheet and JS file with a jQuery dependency.
 	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
-	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri() . '/assets/js/vendor/scrollreveal.min.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'typed', get_template_directory_uri() . '/assets/js/vendor/typed.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'maps', get_template_directory_uri() . '/assets/js/vendor/maps.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri() . '/assets/js/vendor/scrollreveal.min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'typed', get_template_directory_uri() . '/assets/js/vendor/typed.js', array('jquery'), null, true );
+	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),null , true );
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
