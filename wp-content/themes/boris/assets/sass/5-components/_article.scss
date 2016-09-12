@@ -22,6 +22,7 @@
 .c-article__feature {
   position: relative;
   @include span(12 of 12 last);
+  transition: transform .2s ease-out;
 
   background: linear-gradient(
         rgba(0, 0, 0, 0.8),

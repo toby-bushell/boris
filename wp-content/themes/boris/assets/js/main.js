@@ -260,7 +260,10 @@ $(".c-nav-primary__menu").on("mouseleave", function () {
 });
 
 function resizeBackground() {
-  $('.o-hero-fullscreen').height($(window).height()-60);
+  var windowHeight = $(window).height();
+  console.log(windowHeight);
+  $('.o-hero-fullscreen').height(windowHeight - 75);
+  $('.js-hero').height(windowHeight * .9 - 75);
 }
 
 if($('body').hasClass('single-work')) {
