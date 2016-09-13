@@ -1667,12 +1667,15 @@ button, input, select, textarea {
   text-transform: none;
   margin: 80px auto 100px auto;
   padding: 0 5%; }
+  .c-portfolio__heading br {
+    display: none; }
   @media (min-width: 40.063em) {
     .c-portfolio__heading {
-      max-width: 600px;
       font-size: 42px;
       font-size: 3rem;
-      line-height: 1.42857; } }
+      line-height: 1.42857; }
+      .c-portfolio__heading br {
+        display: block; } }
 
 .c-portfolio {
   float: left; }
@@ -1766,7 +1769,7 @@ button, input, select, textarea {
 .c-split__image {
   margin-left: auto;
   background-size: cover;
-  background-position: center; }
+  background-position: left; }
   @media (min-width: 50em) {
     .c-split__image {
       width: 50%;

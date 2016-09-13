@@ -4,9 +4,17 @@
   margin: ($base-spacing-unit * 4) auto ($base-spacing-unit * 5) auto;
   padding: 0 5%;
 
+  br {
+    display: none;
+  }
+
   @include breakpoint($break-tablet) {
-    max-width: 600px;
+    // max-width: 600px;
     @include font-size(42px);
+
+    br {
+      display: block;
+    }
   };
 }
 

@@ -15,7 +15,7 @@ $(function(){
 
   var counter = 0;
     $(".js-home-hero").typed({
-        strings: ["We Build ^ Experiences.", "We Build Connections.", "^We Just Build Great Websites^."],
+        strings: ["We Build ^ <br>Experiences.", "We Build <br>Connections.", "^We Just Build Great<br> Websites^."],
         typeSpeed: 30,
         backDelay: 1000,
         showCursor: false,
@@ -248,15 +248,21 @@ $(window).resize(function(){
 });
 
 $(".c-nav-primary__link").on("mouseenter", function () {
-  boris.menuHover.enter($(this));
+  if ($(window).width() > 540) {
+    boris.menuHover.enter($(this));
+  }
 });
 
 $(".c-nav-primary__link").on("mouseleave", function () {
-  boris.menuHover.leave($(this));
+  if ($(window).width() > 540) {
+    boris.menuHover.leave($(this));
+  }
 });
 
 $(".c-nav-primary__menu").on("mouseleave", function () {
-  boris.menuHover.menuLeave();
+  if ($(window).width() > 540) {
+    boris.menuHover.menuLeave();
+  }
 });
 
 function resizeBackground() {

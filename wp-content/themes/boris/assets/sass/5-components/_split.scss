@@ -6,7 +6,7 @@
 .c-split__image {
   margin-left: auto;
   background-size: cover;
-  background-position: center;
+  background-position: left;
 
   @include breakpoint($break-desktop) {
     width: 50%;
